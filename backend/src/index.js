@@ -2,14 +2,12 @@ import http from 'node:http';
 import app from './app.js';
 import 'dotenv/config';
 
-/**
- * Create HTTP server.
- */
+// Create HTTP server.
+
 const server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+// Listen on provided port, on all network interfaces.
+
 const port = process.env.PORT ? Number.parseInt(process.env.PORT, 10) : 3000;
 
 server.listen(port);
