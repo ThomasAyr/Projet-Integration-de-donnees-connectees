@@ -46,7 +46,16 @@ const swaggerDocument = {
               // The responses that can be sent from the endpoint
               "responses": {
                   "200": {
-                      "description": "A successful response"
+                      "description": "A Successful Response"
+                  },
+                  "404": {
+                      "description": "Resource Not Found"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
+                  },
+                  "502" : {
+                    "description": "The station does not exist"
                   }
               }
           }
@@ -69,6 +78,12 @@ const swaggerDocument = {
               "responses": {
                   "200": {
                       "description": "A successful response"
+                  },
+                  "404": {
+                      "description": "Resource Not Found"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
                   }
               }
           }
@@ -84,13 +99,19 @@ const swaggerDocument = {
                       "description": "The first name of the person to greet.",
                       "schema": {
                           "type": "string",
-                          "default": "Sir or Madam"
+                          "default": "Madame, Monsieur"
                       }
                   }
               ],
               "responses": {
                   "200": {
                       "description": "A successful response"
+                  },
+                  "404": {
+                      "description": "Resource Not Found"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
                   }
               }
           }

@@ -31,6 +31,7 @@ async function getGreetings(name) {
     return response.json();
   } catch (error) {
     console.error(`Cannot get greetings: ${error}`);
+    res.status(404).json({ "description" : "Error 404 : Resource not found"});
     throw error;
   }
 }
@@ -38,11 +39,12 @@ async function getGreetings(name) {
 export const getGreetingsAPI = async (req, res) => {
   try {
     const name = req.query.name || 'Madame, Monsieur';  // Name default
-    
     const greetingsData = await getGreetings(name);
+
     res.json(greetingsData);
+    res.status(200).send('Success');
   } catch (error) {
     console.error(`Error processing /greetings request: ${error}`);
-    res.status(500).send('Internal Server Error');
+    res.status(500).json({ "description" : "Error 500 : Internal Server Error" });
   }
 };

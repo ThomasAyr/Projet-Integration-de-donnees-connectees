@@ -17,4 +17,9 @@ router.get('/hello', getGreetingsAPI);
 router.use('/', swaggerUi.serve);
 router.get('/', swaggerUi.setup(swaggerDocument));
 
+// Capture All 404 errors
+router.use('*', (req, res) => {
+   res.status(404).json({ "description" : "Error 404" });
+});
+
 export default router;
