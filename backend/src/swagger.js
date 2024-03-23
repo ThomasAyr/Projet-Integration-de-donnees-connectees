@@ -24,14 +24,14 @@ const swaggerDocument = {
       }
   ],
   "paths": {
-      "/bike": {
+      "/bike_by_id": {
           "get": {
               // Summary of the endpoint
               "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations.",
               "parameters": [
                   {
                       // Description of the query parameter
-                      "name": "name",
+                      "name": "id",
                       "in": "query",
                       "required": false,
                       "description": "The identifier of the bike station.",
@@ -53,13 +53,43 @@ const swaggerDocument = {
                   },
                   "500": {
                     "description": "Internal Server Error"
-                  },
-                  "502" : {
-                    "description": "The station does not exist"
                   }
               }
           }
       },
+      "/bike_by_name": {
+        "get": {
+            // Summary of the endpoint
+            "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations.",
+            "parameters": [
+                {
+                    // Description of the query parameter
+                    "name": "name",
+                    "in": "query",
+                    "required": false,
+                    "description": "The name of the bike station.",
+                    // The expected type of the parameter
+                    "schema": {
+                        "type": "string",
+                        // The default value for the parameter
+                        "default": "Boutonnet"
+                    }
+                }
+            ],
+            // The responses that can be sent from the endpoint
+            "responses": {
+                "200": {
+                    "description": "A Successful Response"
+                },
+                "404": {
+                    "description": "Resource Not Found"
+                },
+                "500": {
+                  "description": "Internal Server Error"
+                }
+            }
+        }
+    },
       "/weather": {
           "get": {
               "summary": "Retrieves weather information for a specified city.",
