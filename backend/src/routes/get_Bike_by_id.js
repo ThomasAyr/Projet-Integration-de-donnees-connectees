@@ -17,7 +17,11 @@ export const getBikeAPI_id = async (req, res) => {
     const id = req.query.id || 'urn:ngsi-ld:station:036';  // Default ID
 
     const bikeData = await getBike(id);
-    res.status(200).json(bikeData);
+    if (Array.isArray(bikeData) && bikeData.length === 0) {
+      res.status(404).json({ "description": "Error 404: Bike not found" });
+    } else {
+      res.status(200).json(bikeData[0]);
+    }
 
   } catch (error) {
     console.error(`Error processing request: ${error}`);
