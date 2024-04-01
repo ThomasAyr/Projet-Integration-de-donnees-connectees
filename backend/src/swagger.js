@@ -24,10 +24,28 @@ const swaggerDocument = {
       }
   ],
   "paths": {
+    "/bikes_all": {
+        "get": {
+            // Summary of the endpoint
+            "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations.",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "A Successful Response"
+                },
+                "404": {
+                    "description": "Resource Not Found"
+                },
+                "500": {
+                  "description": "Internal Server Error"
+                }
+            }
+        }
+    },
       "/bike_by_id": {
           "get": {
               // Summary of the endpoint
-              "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations.",
+              "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations by id.",
               "parameters": [
                   {
                       // Description of the query parameter
@@ -60,7 +78,7 @@ const swaggerDocument = {
       "/bike_by_name": {
         "get": {
             // Summary of the endpoint
-            "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations.",
+            "summary": "Retrieves the availability of Montpellier’s public bike-sharing stations by name.",
             "parameters": [
                 {
                     // Description of the query parameter

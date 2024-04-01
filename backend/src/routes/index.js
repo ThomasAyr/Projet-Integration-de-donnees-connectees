@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { getBikeAPI_id } from './get_Bike_by_id.js';
 import { getBikeAPI_name } from './get_Bike_by_name.js';
+import { getAllBikeAPI } from './get_All_Bikes.js';
 import { getWeatherAPI } from './get_Weather.js';
 import { getGreetingsAPI } from './get_Hello.js';
 
@@ -10,6 +11,7 @@ import swaggerDocument from '../swagger.js';
 
 const router = Router();
 
+router.get('/bikes_all', getAllBikeAPI);
 router.get('/bike_by_id', getBikeAPI_id);
 router.get('/bike_by_name', getBikeAPI_name);
 router.get('/weather', getWeatherAPI);
