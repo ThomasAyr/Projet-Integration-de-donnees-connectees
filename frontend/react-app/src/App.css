@@ -3,7 +3,6 @@
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
 }
 
@@ -11,17 +10,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -34,5 +22,106 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.App-header {
+  background-color: #dcf0e4;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #88b09d;
+}
+
+
+
+.card {
+  border: 2px solid #88b09d;
+  color:#88b09d;
+  background-color: #dcf0e4;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 25%;
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .card {
+    margin: 0 auto; 
+    max-width: 100%;
+  }
+}
+
+.card-number {
+  font-size: 2em; /* Large number size */
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1em;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+  }
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url('./Graphic/city.jpg') repeat-x bottom;
+  overflow-x: hidden;
+}
+
+.city-background {
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+}
+
+.bike-logo {
+  position: absolute;
+  animation: moveBike 10s linear infinite; 
+  bottom: 0; 
+}
+
+.bike2-logo {
+  position: absolute;
+  animation: moveBike2 12s linear infinite; 
+  bottom: 0; 
+}
+
+@keyframes moveBike {
+  0% {
+    left: -100px; 
+  }
+  100% {
+    left: 100%; 
+  }
+}
+
+@keyframes moveBike2 {
+  0% {
+    left: 100%; 
+  }
+  100% {
+    left: -100%; 
   }
 }
