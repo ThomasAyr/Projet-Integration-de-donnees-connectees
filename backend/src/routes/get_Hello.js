@@ -21,7 +21,7 @@ async function getGreetings(name) {
         "messages": [
           {
             "role": "user",
-            "content": `En langue française uniquement, rédige moi un message de bonjour inspirant à une personne qui s'appelle "${name}", sans questions et en 3 phrases !`,
+            "content": `In English, send me a hello message to a person called "${name}", without questions and in 3 sentences! You can tell him to take the bike today.`,
           },
         ]
       })
