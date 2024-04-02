@@ -40,6 +40,17 @@
   color: #88b09d;
 }
 
+.Button-card {
+  border: 2px solid #88b09d;
+  color:#88b09d;
+  background-color: #dcf0e4;
+}
+
+.Button-card:hover {
+  background-color:#88b09d;
+  color: #dcf0e4;
+}
+
 .card {
   border: 2px solid #88b09d;
   color:#88b09d;
@@ -140,6 +151,14 @@
   }
 }
 
+.h1-bikelogo {
+  color:#88b09d;
+}
+
+.h1-weather {
+  color:#88b09d;
+}
+
 footer {
   margin-top : 50px;
   padding : 30px;
@@ -148,3 +167,4 @@ footer {
   color:#88b09d;
   background-color: #dcf0e4;
 }
+

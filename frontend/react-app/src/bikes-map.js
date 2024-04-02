@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import bikeIconUrl from './Graphic/bike2.png';
@@ -35,10 +36,18 @@ export default function BikeMap() {
     }, 100);
   }, []);
 
+  
+  const handleOpenStation = (stationId) => {
+    const name = prompt('Please enter your first name:');
+    if (name) {
+      window.open(`/station-info?station=${stationId}&name=${name}`, '_self');
+    }
+  }; 
+
   return (
-    <MapContainer 
-      center={[43.610769, 3.876716]} 
-      zoom={14} 
+    <MapContainer
+      center={[43.610769, 3.876716]}
+      zoom={14}
       style={{ height: '100vh', width: '100%' }}
       whenCreated={mapInstance => { mapRef.current = mapInstance; }}
     >
@@ -55,8 +64,8 @@ export default function BikeMap() {
           <Popup>
             <b>{station.address.value.streetAddress}</b><br />
             Available Bikes: {station.availableBikeNumber.value}<br />
-            Free Slots: {station.freeSlotNumber.value}<br />
-            <a href={`https://effective-space-enigma-x6j49v465773675r-3000.app.github.dev/?station=${station.id}`}>Open station</a>
+            Free Slots: {station.freeSlotNumber.value}<br /><br />
+            <button onClick={() => handleOpenStation(station.id)}>My individual dashboard</button>
           </Popup>
         </Marker>
       ))}
