@@ -34,10 +34,34 @@ const swaggerDocument = {
                     "description": "A Successful Response"
                 },
                 "404": {
-                    "description": "Resource Not Found"
+                    "description": "Resource Not Found",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "notFound": {
+                                    "summary": "Example of a 404 response",
+                                    "value": {
+                                        "message": "Error 404: Bike not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 },
                 "500": {
-                  "description": "Internal Server Error"
+                  "description": "Internal Server Error",
+                  "content": {
+                      "application/json": {
+                          "examples": {
+                              "internalServerError": {
+                                  "summary": "Example of a 500 response",
+                                  "value": {
+                                      "message": "fetch failed"
+                                  }
+                              }
+                          }
+                      }
+                  }
                 }
             }
         }
@@ -67,10 +91,34 @@ const swaggerDocument = {
                       "description": "A Successful Response"
                   },
                   "404": {
-                      "description": "Resource Not Found"
+                      "description": "Resource Not Found",
+                      "content": {
+                        "application/json": {
+                            "examples": {
+                                "notFound": {
+                                    "summary": "Example of a 404 response",
+                                    "value": {
+                                        "message": "Error 404: Bike not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   },
                   "500": {
-                    "description": "Internal Server Error"
+                    "description": "Internal Server Error",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "internalServerError": {
+                                    "summary": "Example of a 500 response",
+                                    "value": {
+                                        "message": "fetch failed"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   }
               }
           }
@@ -100,10 +148,34 @@ const swaggerDocument = {
                     "description": "A Successful Response"
                 },
                 "404": {
-                    "description": "Resource Not Found"
+                    "description": "Resource Not Found",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "notFound": {
+                                    "summary": "Example of a 404 response",
+                                    "value": {
+                                        "message": "Error 404: Bike not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 },
                 "500": {
-                  "description": "Internal Server Error"
+                  "description": "Internal Server Error",
+                  "content": {
+                      "application/json": {
+                          "examples": {
+                              "internalServerError": {
+                                  "summary": "Example of a 500 response",
+                                  "value": {
+                                      "message": "fetch failed"
+                                  }
+                              }
+                          }
+                      }
+                  }
                 }
             }
         }
@@ -128,10 +200,34 @@ const swaggerDocument = {
                       "description": "A successful response"
                   },
                   "404": {
-                      "description": "Resource Not Found"
+                      "description": "Resource Not Found",
+                      "content": {
+                        "application/json": {
+                            "examples": {
+                                "notFound": {
+                                    "summary": "Example of a 404 response",
+                                    "value": {
+                                        "message": "Error 404 : Resource not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   },
                   "500": {
-                    "description": "Internal Server Error"
+                    "description": "Internal Server Error",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "internalServerError": {
+                                    "summary": "Example of a 500 response",
+                                    "value": {
+                                        "message": "fetch failed"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   }
               }
           }
@@ -156,16 +252,40 @@ const swaggerDocument = {
                       "description": "A successful response"
                   },
                   "404": {
-                      "description": "Resource Not Found"
+                      "description": "Resource Not Found",
+                      "content": {
+                        "application/json": {
+                            "examples": {
+                                "notFound": {
+                                    "summary": "Example of a 404 response",
+                                    "value": {
+                                        "message": "Error 404 : Resource not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   },
                   "500": {
-                    "description": "Internal Server Error"
+                    "description": "Internal Server Error",
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "internalServerError": {
+                                    "summary": "Example of a 500 response",
+                                    "value": {
+                                        "message": "fetch failed"
+                                    }
+                                }
+                            }
+                        }
+                    }
                   }
               }
           }
       }
   }
-}; 
+};
 
 // Export the swaggerDocument object as a module
 export default swaggerDocument;
