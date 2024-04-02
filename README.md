@@ -5,7 +5,8 @@ Should I take the bike today? The interface indicates whether a bike is availabl
 It can be linked to a personal assistant to predict a person's wake-up time depending on whether they will use the bike or not.
 
 ## Running the Project
-Run the command `npm run dev` in the terminal.
+Run the command `npm run dev` (cd backend) in the terminal.
+Run the command `npm start` (cd frontend/react-app) in the terminal.
 
 ## Data Used
 - Availability of self-service bikes in the Montpellier metropolitan area. [https://portail-api-data.montpellier3m.fr/bikestation](https://portail-api-data.montpellier3m.fr/bikestation)
