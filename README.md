@@ -4,9 +4,10 @@ Should I take the bike today? The interface indicates whether a bike is availabl
 ## Project Usage
 It can be linked to a personal assistant to predict a person's wake-up time depending on whether they will use the bike or not.
 
-## Running the Project
-Run the command `npm run dev` (cd backend) in the terminal.
-Run the command `npm start` (cd frontend/react-app) in the terminal.
+## Running the Project by node.js
+1. Run the command `npm run dev` (path : cd backend) in the terminal.
+2. Run the command `npm start` (path : cd frontend/react-app) in the terminal.
+3. Make the ports `Public`.
 
 ## Data Used
 - Availability of self-service bikes in the Montpellier metropolitan area. [https://portail-api-data.montpellier3m.fr/bikestation](https://portail-api-data.montpellier3m.fr/bikestation)
@@ -19,8 +20,11 @@ Run the command `npm start` (cd frontend/react-app) in the terminal.
 Then integrate these API keys into an environment file.
 
 ## Contributions
-Thomas Ayrivié and Dina El Hijjawi, students at Paul Valéry University.
-Special thanks to Hugo and Thomas for providing the Connected Data Integration teaching.
+Thomas Ayrivié and Dina El Hijjawi, students at Paul Valéry Montpellier University.
+Special thanks to Hugo Gresse and Thomas Paillot for providing the Connected Data Integration teaching.
 
 ## Project Status
 API and DevWeb: Completed.
+
+## Technologies 
+This project employs **React.js** and **Leaflet.js** for a dynamic frontend, complemented by a backend powered by **Node.js** using **dotenv.js**, **Nodemon**, and **Swagger.js** for environment management, live reloading, and API documentation. Key dependencies include **cors**, **express**, **node-fetch** and **pino-http** for cross-origin requests, web serving, HTTP requests and logging.
