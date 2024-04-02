@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App-map {
+  padding: 0 6%;
+}
+
 .App-logo {
   pointer-events: none;
 }
@@ -36,8 +40,6 @@
   color: #88b09d;
 }
 
-
-
 .card {
   border: 2px solid #88b09d;
   color:#88b09d;
@@ -46,8 +48,20 @@
   padding: 20px;
   width: 100%;
   max-width: 25%;
+  align-items: center; 
+  justify-content: center;
   text-align: center;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.card:hover {
+  background-color:#88b09d;
+  color: #dcf0e4;
+}
+.card-green {
+  background-color:#88b09d;
+  color: #dcf0e4;
+  font-size:larger;
 }
 
 .cards-container {
@@ -124,4 +138,13 @@
   100% {
     left: -100%; 
   }
+}
+
+footer {
+  margin-top : 50px;
+  padding : 30px;
+  height: 50px;
+  text-align: center;
+  color:#88b09d;
+  background-color: #dcf0e4;
 }

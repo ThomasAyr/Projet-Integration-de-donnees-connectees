@@ -1,18 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import './App.css'; 
+import BikeMap from './bikes-map.js';
+
 import bike from "./Graphic/bike.png"; 
 import bike2 from "./Graphic/bike2.png"; 
 import cityBackground from "./Graphic/city.jpg";
 
-const cardsData = [
-  { number: '01', text: 'First Feature' },
-  { number: '02', text: 'Second Sight' },
-  { number: '03', text: 'Third Wonder' },
-];
+function Weather() {
+  const [weatherData, setWeatherData] = useState(null);
 
-function Card({ number, text }) {
+  useEffect(() => {
+    const weatherApiUrl = 'https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/weather?city=Montpellier';
+
+    fetch(weatherApiUrl)
+      .then(response => response.json())
+      .then(data => setWeatherData(data))
+      .catch(error => console.error('Error fetching weather data:', error));
+  }, []);
+
+  if (!weatherData) return <div>Loading weather data...</div>;
+
+  const { current } = weatherData;
+  const weatherMessage = current.precip_mm > 0 || current.precip_in > 0 ? "It might rain today, caution while biking" : "Nice weather today but stay cautious";
+  const temperatureMessage = `It's ${current.temp_c} degrees °C`;
+  const windMessage = `Wind: ${current.wind_kph} km/h (${current.wind_dir})`;
+  const humidityMessage = `Humidity: ${current.humidity}%`;
+  const feelsLikeMessage = `Feels like: ${current.feelslike_c}°C`;
+
   return (
-    <div className="card">
+    <div>
+      <h1>
+        <img src={`https:${current.condition.icon}`} alt={current.condition.text} style={{ verticalAlign: 'middle' }} />
+        {current.condition.text}
+      </h1>
+      <div className="cards-container">
+        <div className="card">{temperatureMessage}<br/>{feelsLikeMessage}</div>
+        <div className="card card-green">{weatherMessage}</div>
+        <div className="card">{windMessage}<br/>{humidityMessage}</div>
+      </div>
+    </div>
+  );
+}
+
+
+async function fetchBikeData() {
+  try {
+    const response = await fetch('https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/bikes_all');
+    const data = await response.json();
+    const allBikeStations = data.AllBikeStations;
+
+    if (!allBikeStations) {
+      console.error('AllBikeStations data is not found');
+      return;
+    }
+
+    const totalBikesAvailable = allBikeStations.reduce((acc, station) => acc + station.availableBikeNumber.value, 0);
+    const totalPlacesAvailable = allBikeStations.reduce((acc, station) => acc + station.freeSlotNumber.value, 0);
+
+    const cardsData = [
+      {number:  allBikeStations.length, text: 'Bike stations'},
+      {number: totalBikesAvailable, text: 'Bikes available'},
+      {number: totalPlacesAvailable, text: 'Places available'},
+    ];
+
+    return cardsData;
+  } catch (error) {
+    console.error('Error fetching bike data:', error);
+  }
+}
+const cardsData = await fetchBikeData();
+
+
+function Card({ number, text, green }) {
+  return (
+    <div className={`card ${green ? 'card-green' : ''}`}>
       <div className="card-number">{number}</div>
       <div className="card-text">{text}</div>
     </div>
@@ -31,10 +93,24 @@ function App() {
           <img src={bike2} className="bike2-logo" alt="Bike2" />
         </div>
       </header>
+      <h1>
+        <img src={bikelogo} alt="bike" style={{ verticalAlign: 'middle' }} /> Available bikes
+      </h1>
       <div className="cards-container">
-        {cardsData.map((card, index) => (
-          <Card key={index} number={card.number} text={card.text} />
+        {cardsData.map((card) => (
+          <Card key={card.id} number={card.number} text={card.text} green={card.green} />
         ))}
+      </div>
+      
+      <Weather />
+      
+      <div className="App-map">
+        <BikeMap />
+      </div>
+      <div className="footer">
+      <footer>
+        April 2024 - API Project by Ayrivié/El Hijjawi - Paul Valéry University.<br />Legal Notice.
+      </footer>
       </div>
     </div>
   );
