@@ -2,6 +2,9 @@
     width: 100%;
     position: relative;
     padding-bottom: 50px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
   }
   
   .search-input {
@@ -20,3 +23,6 @@
     cursor: pointer;
   }
   
+  .suggestions-list li:hover {
+    color: #88b09d;
+  }

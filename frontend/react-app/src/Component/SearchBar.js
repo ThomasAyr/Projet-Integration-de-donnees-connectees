@@ -27,8 +27,11 @@ const SearchBar = () => {
     setSuggestions(filteredSuggestions);
   };
 
-  const handleSuggestionClick = (stationId) => {
-    window.location.href = `https://effective-space-enigma-x6j49v465773675r-3000.app.github.dev/station-info?station=${stationId}`;
+  const handleOpenStation = (stationId) => {
+    const name = prompt('Please enter your first name:');
+    if (name) {
+      window.location.href = `https://effective-space-enigma-x6j49v465773675r-3000.app.github.dev/station-info?station=${stationId}&name=${name}`;
+    }
   };
 
   return (
@@ -43,7 +46,7 @@ const SearchBar = () => {
       {suggestions.length > 0 && (
         <ul className="suggestions-list">
           {suggestions.map(station => (
-            <li key={station.id} onClick={() => handleSuggestionClick(station.id)}>
+            <li key={station.id} onClick={() => handleOpenStation(station.id)}>
               {station.name}
             </li>
           ))}
