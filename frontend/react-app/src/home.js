@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css'; 
 import BikeMap from './bikes-map.js';
+import SearchBar from "./SearchBar.js";
 
 import bike from "./Graphic/bike.png"; 
 import bike2 from "./Graphic/bike2.png"; 
 import bikelogo from "./Graphic/bikelogo.png"; 
 import bikelogo2 from "./Graphic/bikelogo2.png";
 import cityBackground from "./Graphic/city.jpg";
+
 
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -111,7 +113,9 @@ function Home() {
       </h1>
       <div className="App-map">
         <BikeMap />
+        <SearchBar  />
       </div>
+      
       <div className="footer">
       <footer>
         April 2024 - API Project by Ayrivié/El Hijjawi - Paul Valéry University.<br />Legal Notice.
@@ -120,5 +124,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;
