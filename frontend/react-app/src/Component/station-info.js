@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import './App.css'; 
+import '../App.css'; 
 
-import bike from "./Graphic/bike.png"; 
-import bike2 from "./Graphic/bike2.png"; 
-import bikelogo from "./Graphic/bikelogo.png"; 
-import bikelogo2 from "./Graphic/bikelogo2.png";
-import cityBackground from "./Graphic/city.jpg";
+import bike from "../Graphic/bike.png"; 
+import bike2 from "../Graphic/bike2.png"; 
+import bikelogo from "../Graphic/bikelogo.png"; 
+import bikelogo2 from "../Graphic/bikelogo2.png";
+import cityBackground from "../Graphic/city.jpg";
 
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);

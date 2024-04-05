@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SearchBar.css'; // Assurez-vous d'avoir un fichier CSS avec ce nom
+import './SearchBar.css';
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');
@@ -38,7 +38,7 @@ const SearchBar = () => {
         type="text"
         value={inputValue}
         onChange={handleChange}
-        placeholder="Rechercher une station..."
+        placeholder="Search for a station..."
       />
       {suggestions.length > 0 && (
         <ul className="suggestions-list">

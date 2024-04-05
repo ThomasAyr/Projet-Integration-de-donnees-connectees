@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import bikeIconUrl from './Graphic/bike2.png';
+import bikeIconUrl from '../Graphic/bike2.png';
 
 const bikeIcon = new L.Icon({
   iconUrl: bikeIconUrl,

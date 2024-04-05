@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import './App.css'; 
-import BikeMap from './bikes-map.js';
-import SearchBar from "./SearchBar.js";
+import BikeMap from './Component/bikes-map.js';
+import SearchBar from "./Component/SearchBar.js";
 
 import bike from "./Graphic/bike.png"; 
 import bike2 from "./Graphic/bike2.png"; 
@@ -112,8 +112,10 @@ function Home() {
         <img src={bikelogo} alt="bike" style={{ verticalAlign: 'middle' }} /> Map available bikes
       </h1>
       <div className="App-map">
-        <BikeMap />
         <SearchBar  />
+      </div>
+      <div className="App-map">
+        <BikeMap />
       </div>
       
       <div className="footer">
