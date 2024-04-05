@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css'; 
 import BikeMap from './Component/bikes-map.js';
 import SearchBar from "./Component/SearchBar.js";
+import fetchBikeData from './Component/fetchBikeData.js'; 
 
 import bike from "./Graphic/bike.png"; 
 import bike2 from "./Graphic/bike2.png"; 
@@ -47,35 +48,6 @@ function Weather() {
   );
 }
 
-
-async function fetchBikeData() {
-  try {
-    const response = await fetch('https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/bikes_all');
-    const data = await response.json();
-    const allBikeStations = data.AllBikeStations;
-
-    if (!allBikeStations) {
-      console.error('AllBikeStations data is not found');
-      return;
-    }
-
-    const totalBikesAvailable = allBikeStations.reduce((acc, station) => acc + station.availableBikeNumber.value, 0);
-    const totalPlacesAvailable = allBikeStations.reduce((acc, station) => acc + station.freeSlotNumber.value, 0);
-
-    const cardsData = [
-      {number:  allBikeStations.length, text: 'Bike stations'},
-      {number: totalBikesAvailable, text: 'Bikes available'},
-      {number: totalPlacesAvailable, text: 'Places available'},
-    ];
-
-    return cardsData;
-  } catch (error) {
-    console.error('Error fetching bike data:', error);
-  }
-}
-const cardsData = await fetchBikeData();
-
-
 function Card({ number, text, green }) {
   return (
     <div className={`card ${green ? 'card-green' : ''}`}>
@@ -86,6 +58,15 @@ function Card({ number, text, green }) {
 }
 
 function Home() {
+  const [cardsData, setCardsData] = useState([]); 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchBikeData();
+      setCardsData(data); 
+    };
+  fetchData(); 
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
