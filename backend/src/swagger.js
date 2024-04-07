@@ -1,9 +1,6 @@
 async function getForwardedAddress() {
-  const port = process.env.PORT ? Number.parseInt(process.env.PORT, 10) : 3000;
-  const name_workspace = process.env.WORKSPACE_NAME;
-  
-  // Constructs the forwarded address URL using environment variables.
-  return `https://${process.env.WORKSPACE_NAME}-${port}.app.github.dev`;
+    console.log(process.env.HOST_NAME_BACKEND);
+    return process.env.HOST_NAME_BACKEND;
 }
 
 const swaggerDocument = {
@@ -13,7 +10,7 @@ const swaggerDocument = {
       "title": "Montpellier Mobility Assistant API",
       // A short description of the API
       "description": "Documentation of available APIs",
-      "version": "1.0.0"
+      "version": "1.2.0"
   },
   "servers": [
       {

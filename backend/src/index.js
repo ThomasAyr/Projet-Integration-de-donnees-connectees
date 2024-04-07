@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 // Listen on provided port, on all network interfaces.
 
-const port = process.env.PORT ? Number.parseInt(process.env.PORT, 10) : 3000;
+const port = process.env.PORT_BACKEND ? Number.parseInt(process.env.PORT_BACKEND, 10) : 3002;
 
 server.listen(port);
 
