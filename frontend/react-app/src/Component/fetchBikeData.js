@@ -1,6 +1,6 @@
 const fetchBikeData = async () => {
     try {
-      const response = await fetch('https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/bikes_all');
+      const response = await fetch('/api/bikes_all?');
       const data = await response.json();
       if (!data.AllBikeStations) {
         console.error('AllBikeStations data is not found');

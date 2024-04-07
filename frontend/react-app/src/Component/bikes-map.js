@@ -17,7 +17,7 @@ export default function BikeMap() {
   const mapRef = useRef(null);
 
   useEffect(() => {
-    fetch('https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/bikes_all')
+    fetch('/api/bikes_all')
       .then(response => response.json())
       .then(data => {
         if (data.AllBikeStations) {

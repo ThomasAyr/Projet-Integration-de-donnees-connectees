@@ -13,9 +13,7 @@ function Weather() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    const weatherApiUrl = 'https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/weather?city=Montpellier';
-
-    fetch(weatherApiUrl)
+    fetch('/api/weather?city=Montpellier')
       .then(response => response.json())
       .then(data => setWeatherData(data))
       .catch(error => console.error('Error fetching weather data:', error));
@@ -51,7 +49,7 @@ async function fetchBikeDataid() {
       const searchParams = new URLSearchParams(window.location.search);
       const id = searchParams.get('station');
       
-      const response = await fetch(`https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/bike_by_id?id=${id}`);
+      const response = await fetch(`/api/bike_by_id?id=${id}`);
       const data = await response.json();
   
       if (!data) {
@@ -80,7 +78,7 @@ async function fetchBikeDataid() {
       const searchParams = new URLSearchParams(window.location.search);
       const name = searchParams.get('name');
       
-      const response = await fetch(`https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/hello?name=${name}`);
+      const response = await fetch(`/api/hello?name=${name}`);
       const data = await response.json();
   
       if (!data) {

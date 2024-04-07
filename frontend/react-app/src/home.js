@@ -16,9 +16,7 @@ function Weather() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    const weatherApiUrl = 'https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev/weather?city=Montpellier';
-
-    fetch(weatherApiUrl)
+    fetch('/api/weather?city=Montpellier')
       .then(response => response.json())
       .then(data => setWeatherData(data))
       .catch(error => console.error('Error fetching weather data:', error));
