@@ -7,10 +7,9 @@ It can be linked to a personal assistant to predict a person's wake-up time depe
 ## Running the Project by node.js
 1. Install dependencies with `npm install` in the terminal.
 2. Enter the variables `API_METEO_KEY` (API key), `OPENROUTER_API_KEY` (API key), `HOST_NAME_BACKEND` (Put the backend URL, port included if needed), `PORT_BACKEND=3001` (Put 3001 for the default backend port) in .env (path : cd backend/.env).
-3. Put the `frontend url` after the target parameter in `setupProxy.js` (path : cd frontend/react-app/src/setupProxy.js).
-4. Run the command `npm run dev` (path : cd backend) in the terminal.
-5. Run the command `npm start` (path : cd frontend/react-app) in the terminal.
-6. Make the ports `Public`.
+3. Run the command `npm run dev` (path : cd backend) in the terminal.
+4. Run the command `npm start` (path : cd frontend/react-app) in the terminal.
+5. Make the ports `Public`.
 
 ## Running tests
 - Run the command `npm test` in the terminal.

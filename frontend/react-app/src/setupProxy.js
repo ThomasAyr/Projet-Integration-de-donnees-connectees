@@ -1,8 +1,13 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const dotenv = require('dotenv');
+const path = require('path');
+
+const envPath = path.resolve(__dirname, '..', '..', '..', 'backend', '.env');
+dotenv.config({ path: envPath });
 
 module.exports = function(app) {
   app.use('/api', createProxyMiddleware({ 
-    target: 'https://effective-space-enigma-x6j49v465773675r-3001.app.github.dev',
+    target: process.env.HOST_NAME_BACKEND,
     changeOrigin: true
   }));
 };
